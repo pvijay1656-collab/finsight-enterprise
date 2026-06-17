@@ -660,7 +660,9 @@ Investment Analytics Platform
 
 <script src="js/dashboard.js"></script>
 
-    const user = JSON.parse(
+<script>
+
+const user = JSON.parse(
     localStorage.getItem("finsight_user")
 );
 
@@ -695,48 +697,49 @@ document.getElementById(
 }
 
 const adminMenu =
-    document.getElementById(
-        "adminMenu"
-    );
+document.getElementById(
+"adminMenu"
+);
 
 const currentEmail =
-    localStorage.getItem(
-        "userEmail"
-    );
+localStorage.getItem(
+"userEmail"
+);
 
 if(
-    currentEmail !==
-    "pvijay1656@gmail.com"
+currentEmail !==
+"pvijay1656@gmail.com"
 ){
-    adminMenu.style.display =
-        "none";
+adminMenu.style.display =
+"none";
 }
 
 document
 .getElementById(
-    "logoutBtn"
+"logoutBtn"
 )
 .addEventListener(
-    "click",
-    function(){
+"click",
+function(){
 
-        localStorage.removeItem(
-            "loggedIn"
-        );
-
-        localStorage.removeItem(
-            "userEmail"
-        );
-
-        localStorage.removeItem(
-            "finsight_user"
-        );
-
-        window.location.href =
-            "login.html";
-
-    }
+localStorage.removeItem(
+"loggedIn"
 );
+
+localStorage.removeItem(
+"userEmail"
+);
+
+localStorage.removeItem(
+"finsight_user"
+);
+
+window.location.href =
+"login.html";
+
+}
+);
+
 </script>
 
 </body>
