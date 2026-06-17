@@ -666,6 +666,23 @@ Investment Analytics Platform
 
 <script>
 
+    const user = JSON.parse(
+    localStorage.getItem("finsight_user")
+);
+
+if(user){
+
+    document.getElementById(
+        "welcomeUser"
+    ).innerHTML =
+
+    `👋 Welcome Back, ${
+        user.fullName || user.email
+    }!`;
+
+}
+
+
 const adminMenu =
     document.getElementById(
         "adminMenu"
