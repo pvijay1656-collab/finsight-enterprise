@@ -790,7 +790,7 @@ export function securityCheck(){
     if(!user){
 
         window.location.href =
-            "../finsight-enterprise/login.html
+            "/finsight-enterprise/login.html
 
         return false;
 
