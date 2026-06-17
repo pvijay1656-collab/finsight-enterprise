@@ -682,6 +682,25 @@ if(user){
 
 }
 
+    <script>
+
+const email =
+localStorage.getItem(
+"userEmail"
+);
+
+if(email){
+
+const name =
+email.split("@")[0];
+
+document.getElementById(
+"welcomeUser"
+).innerHTML =
+
+`👋 Welcome Back, ${name}!`;
+
+}
 
 const adminMenu =
     document.getElementById(
