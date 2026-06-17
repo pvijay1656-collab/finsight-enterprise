@@ -175,8 +175,7 @@ export async function loginUser(
             "Login Successful"
         );
 
-        window.location.href =
-            "../dashboard.html";
+      window.location.href = "/finsight-enterprise/dashboard.html";
 
     }
 
@@ -344,9 +343,7 @@ export function protectAdminRoute(){
         alert(
             "Admin Access Only"
         );
-
-        window.location.href =
-            "../dashboard.html";
+window.location.href = "/finsight-enterprise/dashboard.html";
 
     }
 
@@ -793,7 +790,7 @@ export function securityCheck(){
     if(!user){
 
         window.location.href =
-            "../login.html";
+            "../finsight-enterprise/login.html
 
         return false;
 
