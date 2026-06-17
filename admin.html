@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Admin Console | FinSight Enterprise
+</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<script
+type="module"
+src="js/admin.js">
+</script>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+FinSight Enterprise Admin
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="dashboard.html">Dashboard</a></li>
+
+<li><a href="analytics.html">Analytics</a></li>
+
+<li><a href="reports.html">Reports</a></li>
+
+<li><a href="admin.html">Admin</a></li>
+
+</ul>
+
+</nav>
+
+<!-- PAGE HEADER -->
+
+<section class="dashboard-container">
+
+<h1>
+
+Enterprise Administration Console
+
+</h1>
+
+<p>
+
+Monitor users,
+system health,
+security,
+API consumption,
+and business intelligence.
+
+</p>
+
+</section>
+
+<!-- KPI DASHBOARD -->
+
+<section class="dashboard-container">
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+
+<h3>Total Users</h3>
+
+<h2 id="totalUsers">
+
+5,284
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Active Sessions</h3>
+
+<h2 id="activeUsers">
+
+1,482
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Monthly Revenue</h3>
+
+<h2 id="monthlyRevenue">
+
+₹12.4L
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>API Requests</h3>
+
+<h2 id="apiRequests">
+
+1.8M
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Reports Generated</h3>
+
+<h2 id="reportCount">
+
+18,450
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>System Uptime</h3>
+
+<h2 id="uptime">
+
+99.98%
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- USER MANAGEMENT -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+User Management
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>User ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Role</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="userTable">
+
+<tr>
+
+<td>USR001</td>
+<td>John Smith</td>
+<td>john@email.com</td>
+<td>User</td>
+<td>Active</td>
+
+<td>
+
+<button>
+Edit
+</button>
+
+<button>
+Disable
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ROLE MANAGEMENT -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Role Management
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Role</th>
+<th>Permissions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Admin</td>
+
+<td>
+Full Access
+</td>
+
+</tr>
+
+<tr>
+
+<td>Manager</td>
+
+<td>
+Analytics + Reports
+</td>
+
+</tr>
+
+<tr>
+
+<td>User</td>
+
+<td>
+Portfolio Access
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- SYSTEM HEALTH -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+System Health Dashboard
+
+</h2>
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+
+<h3>CPU Usage</h3>
+
+<h2>34%</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Memory Usage</h3>
+
+<h2>52%</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Database Health</h3>
+
+<h2>Healthy</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Storage</h3>
+
+<h2>68%</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- API ANALYTICS -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+API Usage Analytics
+
+</h2>
+
+<canvas id="apiChart">
+
+</canvas>
+
+</div>
+
+</section>
+
+<!-- REVENUE ANALYTICS -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Revenue Analytics
+
+</h2>
+
+<canvas id="revenueChart">
+
+</canvas>
+
+</div>
+
+</section>
+
+<!-- SECURITY CENTER -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Security Center
+
+</h2>
+
+<ul>
+
+<li>
+Firewall Status: Active
+</li>
+
+<li>
+MFA Enabled: Yes
+</li>
+
+<li>
+Failed Login Attempts: 12
+</li>
+
+<li>
+Last Security Scan: Today
+</li>
+
+<li>
+Threat Level: Low
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- AUDIT LOGS -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Audit Logs
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+<th>User</th>
+<th>Activity</th>
+
+</tr>
+
+</thead>
+
+<tbody id="auditLogs">
+
+<tr>
+
+<td>2026-06-16</td>
+<td>Admin</td>
+<td>User Role Updated</td>
+
+</tr>
+
+<tr>
+
+<td>2026-06-16</td>
+<td>System</td>
+<td>Scheduled Report Generated</td>
+
+</tr>
+
+<tr>
+
+<td>2026-06-15</td>
+<td>Manager</td>
+<td>Analytics Exported</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- REPORT MONITORING -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Report Monitoring
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Report</th>
+<th>Status</th>
+<th>Generated</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Portfolio Report</td>
+<td>Completed</td>
+<td>2 mins ago</td>
+
+</tr>
+
+<tr>
+
+<td>Risk Report</td>
+<td>Completed</td>
+<td>15 mins ago</td>
+
+</tr>
+
+<tr>
+
+<td>Executive Summary</td>
+<td>Running</td>
+<td>Now</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- BUSINESS INTELLIGENCE -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Business Intelligence Overview
+
+</h2>
+
+<canvas id="businessChart">
+
+</canvas>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+<h3>
+
+FinSight Enterprise
+
+</h3>
+
+<p>
+
+Enterprise Administration Platform
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- JS -->
+
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

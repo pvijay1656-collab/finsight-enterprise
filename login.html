@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Login | FinSight Enterprise
+    </title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            FinSight Enterprise
+
+        </div>
+
+        <div class="nav-tagline">
+    🛡️ Secure • Smart • Reliable
+</div>
+
+    </nav>
+
+    <!-- Login Container -->
+
+    <section class="auth-section">
+
+        <div class="auth-container">
+
+            <div class="auth-left">
+
+    <span class="badge">
+        AI Powered
+    </span>
+
+    <h1>
+        Welcome Back!
+    </h1>
+
+    <p>
+        Access your investment dashboard,
+        portfolio, watchlist and analytics.
+    </p>
+
+    <div class="feature">
+        📊 Smart Analytics
+    </div>
+
+    <div class="feature">
+        🔒 Secure & Private
+    </div>
+
+    <div class="feature">
+        📈 Track & Grow
+    </div>
+
+<img
+src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=1000"
+style="
+width:100%;
+margin-top:25px;
+border-radius:15px;
+">          
+            </div>
+
+            <div class="auth-right">
+
+                <h2>
+
+                    Sign In
+
+                </h2>
+
+                <form
+                    id="loginForm">
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Email
+
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter Email"
+                            required>
+
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Password
+
+                        </label>
+
+                        <div
+                            class="password-container">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter Password"
+                                required>
+
+                            <i
+                                class="fa-solid fa-eye"
+                                onclick="togglePassword()">
+
+                            </i>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Remember -->
+
+                    <div
+                        class="remember-row">
+
+                        <label>
+
+                           <div class="remember-forgot">
+
+    <label>
+        <input type="checkbox">
+        Remember Me
+    </label>
+
+    <a href="#">
+        Forgot Password?
+    </a>
+
+</div>
+
+                    <!-- Login -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+
+                        Login
+
+                    </button>
+
+                </form>
+
+                <!-- Divider -->
+
+                <div class="divider">
+    <span>OR</span>
+</div>
+                <!-- Social Login -->
+
+                <div
+                    class="social-login">
+
+                    <button
+    type="button"
+    class="google-btn"
+    onclick="loginWithGoogle()">
+
+                        <i
+                            class="fa-brands fa-google">
+
+                        </i>
+
+                        Continue with Google
+
+                    </button>
+
+                    <button
+                        class="github-btn">
+
+                        <i
+                            class="fa-brands fa-github">
+
+                        </i>
+
+                        Continue with GitHub
+
+                    </button>
+
+                </div>
+
+                <!-- Register -->
+
+                <p
+                    class="register-link">
+
+                   <div class="register-link">
+    Don't have an account?
+    <a href="register.html">Register</a>
+</div>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Firebase -->
+
+    <script
+        type="module" src="firebase/firebase-config.js">
+
+    </script>
+
+    <!-- Auth -->
+
+    <script type="module">
+import {
+    loginUser,
+    loginWithGoogle
+}
+from "./js/auth.js";
+
+window.loginUser = loginUser;
+window.loginWithGoogle = loginWithGoogle;
+
+</script>
+
+    <!-- Login Validation -->
+
+    <script>
+
+        const form =
+            document.getElementById(
+                "loginForm"
+            );
+
+        form.addEventListener(
+            "submit",
+            function (e) {
+
+                e.preventDefault();
+
+                const email =
+                    document.getElementById(
+                        "email"
+                    ).value;
+
+                const password =
+                    document.getElementById(
+                        "password"
+                    ).value;
+
+                if (
+                    email.trim() === ""
+                ) {
+
+                    alert(
+                        "Email Required"
+                    );
+
+                    return;
+                }
+
+                if (
+                    password.length < 6
+                ) {
+
+                    alert(
+                        "Password must be at least 6 characters"
+                    );
+
+                    return;
+                }
+
+                loginUser(
+                    email,
+                    password
+                );
+
+            }
+        );
+
+        function togglePassword() {
+
+            const password =
+                document.getElementById(
+                    "password"
+                );
+
+            if (
+                password.type ===
+                "password"
+            ) {
+
+                password.type =
+                    "text";
+
+            } else {
+
+                password.type =
+                    "password";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

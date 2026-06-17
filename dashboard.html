@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Dashboard | FinSight Enterprise
+</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body class="dashboard-bg">
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+FinSight Enterprise
+
+</div>
+
+<ul class="nav-links">
+
+<li>
+<a href="dashboard.html">
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="portfolio.html">
+Portfolio
+</a>
+</li>
+
+<li>
+<a href="watchlist.html">
+Watchlist
+</a>
+</li>
+
+<li>
+<a href="analytics.html">
+Analytics
+</a>
+</li>
+
+<li>
+<a href="reports.html">
+Reports
+</a>
+</li>
+
+<li>
+<a href="admin.html" id="adminMenu">
+    Admin
+</a>
+</li>
+
+<li>
+<a href="#"
+   id="logoutBtn">
+   Logout
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<!-- HEADER -->
+
+<section class="dashboard-container">
+
+<h1>
+
+Executive Dashboard
+
+</h1>
+
+<p>
+
+Monitor portfolio performance,
+market activity,
+financial goals,
+and AI-driven insights.
+
+</p>
+
+</section>
+
+<!-- KPI SECTION -->
+
+<section class="dashboard-container">
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+
+<h3>Total Investment</h3>
+
+<h2 id="dashboardInvestment">
+
+₹0
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Current Value</h3>
+
+<h2 id="dashboardCurrentValue">
+
+₹0
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Total Profit</h3>
+
+<h2 id="dashboardProfit">
+
+₹0
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>
+
+Daily P&L
+
+</h3>
+
+<h2 id="dailyPnL">
+
+₹0
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Portfolio ROI</h3>
+
+<h2 id="dashboardROI">
+
+0%
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Risk Score</h3>
+
+<h2 id="dashboardRisk">
+
+Medium
+
+</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Diversification</h3>
+
+<h2 id="dashboardDiversification">
+
+Good
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CHARTS -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Portfolio Growth
+
+</h2>
+
+<canvas
+id="growthChart">
+
+</canvas>
+
+</div>
+
+</section>
+
+<section class="dashboard-container">
+
+<div class="dashboard-grid">
+
+<div class="chart-card">
+
+<h2>
+
+Asset Allocation
+
+</h2>
+
+<canvas
+id="allocationChart">
+
+</canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h2>
+
+Profit Distribution
+
+</h2>
+
+<canvas
+id="profitChart">
+
+</canvas>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Monthly Performance
+
+</h2>
+
+<canvas
+id="monthlyChart">
+
+</canvas>
+
+</div>
+
+</section>
+
+<!-- MARKET OVERVIEW -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Market Overview
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Index</th>
+
+<th>Current</th>
+
+<th>Change</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>NIFTY 50</td>
+
+<td id="niftyValue">
+
+22,500
+
+</td>
+
+<td id="niftyChange">
+
++0.45%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>SENSEX</td>
+
+<td id="sensexValue">
+
+74,100
+
+</td>
+
+<td id="sensexChange">
+
++0.52%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>NASDAQ</td>
+
+<td id="nasdaqValue">
+
+18,200
+
+</td>
+
+<td id="nasdaqChange">
+
++0.78%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>S&P 500</td>
+
+<td id="sp500Value">
+
+5,420
+
+</td>
+
+<td id="sp500Change">
+
++0.62%
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- WATCHLIST -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Watchlist
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Symbol</th>
+
+<th>Price</th>
+
+<th>Target</th>
+
+</tr>
+
+</thead>
+
+<tbody
+ id="dashboardWatchlist"
+
+
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- AI INSIGHTS -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+AI Insights
+
+</h2>
+
+<ul id="aiInsights">
+
+<li>
+
+Portfolio is well diversified.
+
+</li>
+
+<li>
+
+Increase exposure to FMCG sector.
+
+</li>
+
+<li>
+
+Risk level currently Medium.
+
+</li>
+
+<li>
+
+Goal achievement probability:
+82%
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- FINANCIAL GOALS -->
+
+<section class="dashboard-container">
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+
+<h3>
+
+Emergency Fund
+
+</h3>
+
+<p>
+
+Target:
+₹5,00,000
+
+</p>
+
+<p>
+
+Progress:
+68%
+
+</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>
+
+Retirement Fund
+
+</h3>
+
+<p>
+
+Target:
+₹2 Cr
+
+</p>
+
+<p>
+
+Progress:
+41%
+
+</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>
+
+House Purchase
+
+</h3>
+
+<p>
+
+Target:
+₹50 Lakhs
+
+</p>
+
+<p>
+
+Progress:
+52%
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RECENT ACTIVITY -->
+
+<section class="dashboard-container">
+
+<div class="chart-card">
+
+<h2>
+
+Recent Activity
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Activity</th>
+
+</tr>
+
+</thead>
+
+<tbody
+id="activityTable">
+
+<tr>
+
+<td>2026-06-15</td>
+
+<td>Added TCS Shares</td>
+
+</tr>
+
+<tr>
+
+<td>2026-06-14</td>
+
+<td>Generated Portfolio Report</td>
+
+</tr>
+
+<tr>
+
+<td>2026-06-13</td>
+
+<td>Updated Goal Planner</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+<h3>
+
+FinSight Enterprise
+
+</h3>
+
+<p>
+
+AI Powered Financial Planning &
+Investment Analytics Platform
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script src="js/app.js"></script>
+
+<script src="js/market-api.js"></script>
+
+<script src="js/portfolio.js"></script>
+
+<script src="js/charts.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+<script>
+
+const adminMenu =
+    document.getElementById(
+        "adminMenu"
+    );
+
+const currentEmail =
+    localStorage.getItem(
+        "userEmail"
+    );
+
+if(
+    currentEmail !==
+    "pvijay1656@gmail.com"
+){
+    adminMenu.style.display =
+        "none";
+}
+
+document
+.getElementById(
+    "logoutBtn"
+)
+.addEventListener(
+    "click",
+    function(){
+
+        localStorage.removeItem(
+            "loggedIn"
+        );
+
+        localStorage.removeItem(
+            "userEmail"
+        );
+
+        localStorage.removeItem(
+            "finsight_user"
+        );
+
+        window.location.href =
+            "login.html";
+
+    }
+);
+</script>
+
+</body>
+
+</html>

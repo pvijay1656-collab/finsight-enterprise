@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Register | FinSight Enterprise
+    </title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <link rel="stylesheet"
+        href="css/auth.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            FinSight Enterprise
+
+        </div>
+
+    </nav>
+
+    <!-- REGISTER SECTION -->
+
+    <section class="auth-section">
+
+        <div class="auth-container">
+
+            <!-- LEFT PANEL -->
+
+            <div class="auth-left">
+
+                <h1>
+
+                    Start Your Investment Journey
+
+                </h1>
+
+                <p>
+
+                    Create an account to access
+                    portfolio management,
+                    financial analytics,
+                    AI insights,
+                    watchlists,
+                    and reporting tools.
+
+                </p>
+
+                <img
+                    src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a"
+                    alt="Register">
+
+            </div>
+
+            <!-- RIGHT PANEL -->
+
+            <div class="auth-right">
+
+                <h2>
+
+                    Create Account
+
+                </h2>
+
+                <form id="registerForm">
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Full Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter Full Name"
+                            required>
+
+                    </div>
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Email Address
+
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter Email"
+                            required>
+
+                    </div>
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Phone Number
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter Phone Number"
+                            required>
+
+                    </div>
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Password
+
+                        </label>
+
+                        <div class="password-container">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create Password"
+                                required>
+
+                            <i
+                                class="fa-solid fa-eye"
+                                onclick="togglePassword('password')">
+
+                            </i>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Confirm Password
+
+                        </label>
+
+                        <div class="password-container">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm Password"
+                                required>
+
+                            <i
+                                class="fa-solid fa-eye"
+                                onclick="togglePassword('confirmPassword')">
+
+                            </i>
+
+                        </div>
+
+                    </div>
+
+                    <!-- TERMS -->
+
+                    <div class="remember-row">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="terms">
+
+                            I agree to the
+                            Terms &
+                            Privacy Policy
+
+                        </label>
+
+                    </div>
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+
+                        Create Account
+
+                    </button>
+
+                </form>
+
+                <!-- DIVIDER -->
+
+                <div class="divider">
+
+                    OR
+
+                </div>
+
+                <!-- SOCIAL LOGIN -->
+
+                <div class="social-login">
+
+                    <button
+    type="button"
+    class="google-btn"
+    onclick="loginWithGoogle()">
+                        <i
+                            class="fa-brands fa-google">
+
+                        </i>
+
+                        Continue with Google
+
+                    </button>
+
+                    <button
+                        class="github-btn">
+
+                        <i
+                            class="fa-brands fa-github">
+
+                        </i>
+
+                        Continue with GitHub
+
+                    </button>
+
+                </div>
+
+                <!-- LOGIN LINK -->
+
+                <p
+                    class="register-link">
+
+                    Already have an account?
+
+                    <a href="login.html">
+
+                        Login
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FIREBASE -->
+
+    <script
+        type="module" src="firebase/firebase-config.js">
+
+    </script>
+
+    <!-- AUTH -->
+
+    <script
+        type="module" src="js/auth.js">
+
+    </script>
+
+    <!-- VALIDATION -->
+
+    <script>
+
+        const form =
+            document.getElementById(
+                "registerForm"
+            );
+
+        form.addEventListener(
+            "submit",
+            function (e) {
+
+                e.preventDefault();
+
+                const fullName =
+                    document.getElementById(
+                        "fullName"
+                    ).value;
+
+                const email =
+                    document.getElementById(
+                        "email"
+                    ).value;
+
+                const phone =
+                    document.getElementById(
+                        "phone"
+                    ).value;
+
+                const password =
+                    document.getElementById(
+                        "password"
+                    ).value;
+
+                const confirmPassword =
+                    document.getElementById(
+                        "confirmPassword"
+                    ).value;
+
+                const terms =
+                    document.getElementById(
+                        "terms"
+                    ).checked;
+
+                if (
+                    fullName.length < 3
+                ) {
+
+                    alert(
+                        "Enter Valid Name"
+                    );
+
+                    return;
+                }
+
+                if (
+                    password.length < 8
+                ) {
+
+                    alert(
+                        "Password should be at least 8 characters"
+                    );
+
+                    return;
+                }
+
+                if (
+                    password !==
+                    confirmPassword
+                ) {
+
+                    alert(
+                        "Passwords do not match"
+                    );
+
+                    return;
+                }
+
+                if (!terms) {
+
+                    alert(
+                        "Accept Terms & Conditions"
+                    );
+
+                    return;
+                }
+
+                registerUser(
+                    fullName,
+                    email,
+                    phone,
+                    password
+                );
+
+            }
+        );
+
+        function togglePassword(
+            fieldId
+        ) {
+
+            const field =
+                document.getElementById(
+                    fieldId
+                );
+
+            field.type =
+                field.type ===
+                "password"
+                ? "text"
+                : "password";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
