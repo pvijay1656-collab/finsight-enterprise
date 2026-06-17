@@ -116,8 +116,7 @@ export async function registerUser(
             "Registration Successful"
         );
 
-        window.location.href =
-            "../dashboard.html";
+      window.location.href = "/finsight-enterprise/dashboard.html";
 
     }
 
@@ -219,8 +218,7 @@ export async function logoutUser(){
             "Logged Out"
         );
 
-        window.location.href =
-            "../login.html";
+      window.location.href = "/finsight-enterprise/login.html";
 
     }
 
@@ -271,8 +269,7 @@ export function protectRoute(){
             "Login Required"
         );
 
-        window.location.href =
-            "../login.html";
+       window.location.href = "/finsight-enterprise/login.html";
 
     }
 
@@ -536,8 +533,8 @@ export async function loginWithGoogle(){
             })
         );
 
-        window.location.href =
-            "../dashboard.html";
+       window.location.href = "/finsight-enterprise/dashboard.html";
+
 
     }
 
@@ -584,8 +581,7 @@ export async function loginWithGithub(){
             })
         );
 
-        window.location.href =
-            "../dashboard.html";
+       window.location.href = "/finsight-enterprise/dashboard.html";
 
     }
 
