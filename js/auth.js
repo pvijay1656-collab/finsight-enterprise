@@ -789,9 +789,10 @@ export function securityCheck(){
 
     if(!user){
 
-        window.location.href =
-            "/finsight-enterprise/login.html
+       window.location.href =
+    "/finsight-enterprise/login.html";
 
+return false;
         return false;
 
     }
