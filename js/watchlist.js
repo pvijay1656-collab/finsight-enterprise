@@ -176,7 +176,35 @@ function addWatchlistItem(event){
     };
 
    watchlist.push(item);
+let activities =
 
+JSON.parse(
+localStorage.getItem(
+"recentActivity"
+)
+) || [];
+
+activities.unshift({
+
+date:
+new Date()
+.toLocaleDateString(),
+
+activity:
+"Added Watchlist: " +
+item.symbol
+
+});
+
+localStorage.setItem(
+
+"recentActivity",
+
+JSON.stringify(
+activities
+)
+
+);
 saveWatchlist();
 
 renderWatchlist();
