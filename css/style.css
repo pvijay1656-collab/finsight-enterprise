@@ -725,3 +725,30 @@ body{
 .welcome-card p{
     color:#374151;
 }
+/* Dashboard Header */
+
+.dashboard-container h1{
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.dashboard-container p{
+    color: #d1d5db;
+    font-size: 18px;
+}
+
+/* Welcome Card */
+
+.welcome-card{
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.welcome-card h2{
+    color: #2563eb;
+    margin-bottom: 10px;
+}
