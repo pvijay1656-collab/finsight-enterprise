@@ -769,3 +769,17 @@ body{
     color: #2563eb;
     margin-bottom: 10px;
 }
+
+.settings-card{
+
+background:white;
+
+padding:20px;
+
+border-radius:15px;
+
+margin:20px;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+
+}
