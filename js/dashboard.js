@@ -295,3 +295,58 @@ activityTable.innerHTML += `
 });
 
 }
+const userEmail =
+localStorage.getItem(
+"userEmail"
+)
+?.toLowerCase()
+?.trim();
+
+const watchlistData =
+JSON.parse(
+
+localStorage.getItem(
+"watchlist_" +
+userEmail
+)
+
+) || [];
+
+const watchlistTable =
+document.getElementById(
+"dashboardWatchlist"
+);
+
+if(
+watchlistTable
+){
+
+watchlistTable.innerHTML = "";
+
+watchlistData
+.slice(0,5)
+.forEach(item=>{
+
+watchlistTable.innerHTML += `
+
+<tr>
+
+<td>
+${item.symbol}
+</td>
+
+<td>
+₹${item.currentPrice}
+</td>
+
+<td>
+₹${item.targetPrice}
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
