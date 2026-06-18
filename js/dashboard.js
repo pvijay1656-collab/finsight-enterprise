@@ -130,16 +130,16 @@ localStorage.getItem("userEmail")
 ?.toLowerCase()
 ?.trim();
 
-const portfolio =
+const dashboardPortfolio =
 JSON.parse(
 localStorage.getItem(
 "portfolio_" + userEmail
 )
 ) || [];
-if(portfolio.length){
+if(dashboardPortfolio.length){
 
 const topHolding =
-portfolio.reduce(
+dashboardPortfolio.reduce(
 (a,b)=>
 
 (a.quantity * a.currentPrice) >
