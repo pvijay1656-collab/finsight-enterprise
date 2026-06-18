@@ -198,6 +198,33 @@ document.getElementById(
 "aiInsights"
 );
 
+if(insightsBox){
+
+let insights = "";
+
+insights +=
+`<li>Risk Level: ${
+calculateRiskScore()
+}</li>`;
+
+insights +=
+`<li>Diversification: ${
+calculateDiversificationScore()
+}</li>`;
+
+getRebalancingSuggestion()
+.forEach(item=>{
+
+insights +=
+`<li>${item}</li>`;
+
+});
+
+insightsBox.innerHTML =
+insights;
+
+}
+
 if(
 portfolio.length &&
 insightsBox
