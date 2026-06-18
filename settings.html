@@ -46,14 +46,27 @@ FinSight Enterprise
 
 <script>
 
-const user =
-JSON.parse(
+const userData =
 localStorage.getItem(
 "finsight_user"
-)
 );
 
-if(user){
+if(userData){
+
+const user =
+JSON.parse(userData);
+
+document.getElementById(
+"userName"
+).innerText =
+user.fullName || "User";
+
+document.getElementById(
+"userEmail"
+).innerText =
+user.email;
+
+}
 
 document.getElementById(
 "userName"
