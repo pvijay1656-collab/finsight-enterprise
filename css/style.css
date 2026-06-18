@@ -738,6 +738,23 @@ body{
     font-size: 18px;
 }
 
+/* Force Dashboard Header Visibility */
+
+.dashboard-container h1{
+    color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.dashboard-container p{
+    color: #e5e7eb !important;
+    opacity: 1 !important;
+}
+
+.dashboard-bg .dashboard-container{
+    position: relative;
+    z-index: 10;
+}
 /* Welcome Card */
 
 .welcome-card{
