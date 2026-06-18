@@ -231,3 +231,40 @@ insightsBox.innerHTML =
 html;
 
 }
+const activityTable =
+document.getElementById(
+"activityTable"
+);
+
+const activities =
+JSON.parse(
+localStorage.getItem(
+"recentActivity"
+)
+) || [];
+
+if(
+activityTable
+){
+
+activityTable.innerHTML = "";
+
+activities
+.slice(0,5)
+.forEach(item=>{
+
+activityTable.innerHTML += `
+
+<tr>
+
+<td>${item.date}</td>
+
+<td>${item.activity}</td>
+
+</tr>
+
+`;
+
+});
+
+}
