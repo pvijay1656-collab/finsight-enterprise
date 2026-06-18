@@ -125,3 +125,70 @@ document.addEventListener(
     }
 
 );
+const userEmail =
+localStorage.getItem("userEmail")
+?.toLowerCase()
+?.trim();
+
+const portfolio =
+JSON.parse(
+localStorage.getItem(
+"portfolio_" + userEmail
+)
+) || [];
+if(portfolio.length){
+
+const topHolding =
+portfolio.reduce(
+(a,b)=>
+
+(a.quantity * a.currentPrice) >
+(b.quantity * b.currentPrice)
+
+? a : b
+);
+
+document.getElementById(
+"topHolding"
+).innerText =
+topHolding.name;
+
+}
+if(portfolio.length){
+
+const best =
+portfolio.reduce(
+(a,b)=>
+
+((a.currentPrice-a.buyPrice)*a.quantity)
+>
+((b.currentPrice-b.buyPrice)*b.quantity)
+
+? a : b
+);
+
+document.getElementById(
+"bestPerformer"
+).innerText =
+best.name;
+
+}
+if(portfolio.length){
+
+const worst =
+portfolio.reduce(
+(a,b)=>
+
+((a.currentPrice-a.buyPrice)*a.quantity)
+<
+((b.currentPrice-b.buyPrice)*b.quantity)
+
+? a : b
+);
+
+document.getElementById(
+"worstPerformer"
+).innerText =
+worst.name;
+
+}
