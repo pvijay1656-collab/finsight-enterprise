@@ -192,3 +192,42 @@ document.getElementById(
 worst.name;
 
 }
+
+const insightsBox =
+document.getElementById(
+"aiInsights"
+);
+
+if(
+portfolio.length &&
+insightsBox
+){
+
+let html = "";
+
+const risk =
+calculateRiskScore();
+
+html +=
+`<li>Portfolio Risk: ${risk}</li>`;
+
+const diversification =
+calculateDiversificationScore();
+
+html +=
+`<li>Diversification: ${diversification}</li>`;
+
+const suggestions =
+getRebalancingSuggestion();
+
+suggestions.forEach(item=>{
+
+html +=
+`<li>${item}</li>`;
+
+});
+
+insightsBox.innerHTML =
+html;
+
+}
