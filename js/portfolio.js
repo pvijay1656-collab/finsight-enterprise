@@ -155,6 +155,40 @@ createdAt:
 
     portfolio.push(asset);
 
+    portfolio.push(asset);
+
+let activities =
+
+JSON.parse(
+localStorage.getItem(
+"recentActivity"
+)
+) || [];
+
+activities.unshift({
+
+date:
+new Date()
+.toLocaleDateString(),
+
+activity:
+"Added " +
+asset.name
+
+});
+
+localStorage.setItem(
+
+"recentActivity",
+
+JSON.stringify(
+activities
+)
+
+);
+
+
+
     savePortfolio();
 
     renderPortfolio();
