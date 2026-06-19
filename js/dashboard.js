@@ -75,9 +75,6 @@ setInterval(
 );
 
 
-}
-
-
 const userEmail =
 localStorage.getItem("userEmail")
 ?.toLowerCase()
