@@ -154,10 +154,10 @@ document.getElementById(
 topHolding.name;
 
 }
-if(portfolio.length){
+if(dashboardPortfolio.length){
 
 const best =
-portfolio.reduce(
+dashboardPortfolio.reduce(
 (a,b)=>
 
 ((a.currentPrice-a.buyPrice)*a.quantity)
@@ -173,10 +173,10 @@ document.getElementById(
 best.name;
 
 }
-if(portfolio.length){
+if(dashboardPortfolio.length){
 
 const worst =
-portfolio.reduce(
+dashboardPortfolio.reduce(
 (a,b)=>
 
 ((a.currentPrice-a.buyPrice)*a.quantity)
