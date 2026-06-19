@@ -198,64 +198,20 @@ document.getElementById(
 "aiInsights"
 );
 
-if(insightsBox){
-
-let insights = "";
-
-insights +=
-`<li>Risk Level: ${
-calculateRiskScore()
-}</li>`;
-
-insights +=
-`<li>Diversification: ${
-calculateDiversificationScore()
-}</li>`;
-
-getRebalancingSuggestion()
-.forEach(item=>{
-
-insights +=
-`<li>${item}</li>`;
-
-});
-
-insightsBox.innerHTML =
-insights;
-
-}
-
 if(
-portfolio.length &&
 insightsBox
 ){
 
-let html = "";
-
-const risk =
-calculateRiskScore();
-
-html +=
-`<li>Portfolio Risk: ${risk}</li>`;
-
-const diversification =
-calculateDiversificationScore();
-
-html +=
-`<li>Diversification: ${diversification}</li>`;
-
-const suggestions =
-getRebalancingSuggestion();
-
-suggestions.forEach(item=>{
-
-html +=
-`<li>${item}</li>`;
-
-});
-
 insightsBox.innerHTML =
-html;
+
+`
+<li>Total Stocks:
+${dashboardPortfolio.length}</li>
+
+<li>Portfolio Loaded Successfully</li>
+
+<li>Track performance regularly</li>
+`;
 
 }
 const activityTable =
@@ -295,12 +251,7 @@ activityTable.innerHTML += `
 });
 
 }
-const userEmail =
-localStorage.getItem(
-"userEmail"
-)
-?.toLowerCase()
-?.trim();
+
 
 const watchlistData =
 JSON.parse(
