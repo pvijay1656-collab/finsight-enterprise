@@ -73,58 +73,11 @@ setInterval(
     60000
 
 );
-function loadDashboardWatchlist(){
 
-    const watchlist =
-
-        JSON.parse(
-            localStorage.getItem(
-                "watchlist"
-            )
-        ) || [];
-
-    const table =
-
-        document.getElementById(
-            "dashboardWatchlist"
-        );
-
-    if(!table)
-        return;
-
-    table.innerHTML = "";
-
-    watchlist.forEach(stock=>{
-
-        table.innerHTML += `
-
-        <tr>
-
-            <td>${stock.symbol}</td>
-
-            <td>₹${stock.currentPrice}</td>
-
-            <td>₹${stock.targetPrice}</td>
-
-        </tr>
-
-        `;
-
-    });
 
 }
 
-document.addEventListener(
 
-    "DOMContentLoaded",
-
-    ()=>{
-
-        loadDashboardWatchlist();
-
-    }
-
-);
 const userEmail =
 localStorage.getItem("userEmail")
 ?.toLowerCase()
