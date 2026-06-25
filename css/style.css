@@ -1327,3 +1327,92 @@ background:transparent;
 font-size:16px;
 
 }
+/* ===========================
+   PREMIUM KPI CARDS
+=========================== */
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-bottom:30px;
+
+}
+
+.stat-box{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:28px;
+
+border-radius:18px;
+
+color:white;
+
+box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.stat-box:hover{
+
+transform:translateY(-6px);
+
+}
+
+.investment{
+
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+}
+
+.value{
+
+background:linear-gradient(135deg,#059669,#047857);
+
+}
+
+.profit{
+
+background:linear-gradient(135deg,#7c3aed,#6d28d9);
+
+}
+
+.roi{
+
+background:linear-gradient(135deg,#ea580c,#c2410c);
+
+}
+
+.stat-box p{
+
+opacity:.9;
+
+margin-bottom:10px;
+
+font-size:15px;
+
+}
+
+.stat-box h2{
+
+font-size:34px;
+
+}
+
+.stat-box i{
+
+font-size:42px;
+
+opacity:.85;
+
+}
