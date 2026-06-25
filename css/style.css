@@ -921,3 +921,100 @@ cursor:pointer;
 background:#374151;
 
 }
+/* ===========================
+   PORTFOLIO TABLE
+=========================== */
+
+.table-card{
+
+background:white;
+
+border-radius:18px;
+
+padding:25px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.table-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.table-header h2{
+
+font-size:28px;
+
+color:#111827;
+
+}
+
+.table-header p{
+
+color:#6b7280;
+
+margin-top:5px;
+
+}
+
+.table-actions{
+
+display:flex;
+
+gap:12px;
+
+}
+
+.portfolio-table{
+
+width:100%;
+
+border-collapse:collapse;
+
+overflow:hidden;
+
+border-radius:12px;
+
+}
+
+.portfolio-table thead{
+
+background:#111827;
+
+color:white;
+
+}
+
+.portfolio-table th{
+
+padding:18px;
+
+font-size:15px;
+
+}
+
+.portfolio-table td{
+
+padding:16px;
+
+text-align:center;
+
+border-bottom:1px solid #e5e7eb;
+
+}
+
+.portfolio-table tbody tr:hover{
+
+background:#f8fafc;
+
+transition:.3s;
+
+}
