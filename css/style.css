@@ -1288,3 +1288,42 @@ background:#dc2626;
 color:white;
 
 }
+.search-wrapper{
+
+display:flex;
+
+align-items:center;
+
+background:white;
+
+border-radius:12px;
+
+padding:0 15px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.search-wrapper i{
+
+color:#6b7280;
+
+margin-right:10px;
+
+}
+
+.search-box{
+
+border:none;
+
+outline:none;
+
+padding:15px;
+
+width:100%;
+
+background:transparent;
+
+font-size:16px;
+
+}
