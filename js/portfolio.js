@@ -155,8 +155,6 @@ createdAt:
 
     portfolio.push(asset);
 
-    portfolio.push(asset);
-
 let activities =
 
 JSON.parse(
@@ -442,13 +440,35 @@ function renderPortfolio(){
 
             <td>${formatCurrency(asset.buyPrice)}</td>
 
-            <td>${formatCurrency(asset.currentPrice)}</td>
+            <td style="color:${
+asset.currentPrice >= asset.buyPrice
+? 'limegreen'
+: 'red'
+};font-weight:bold;">
+
+${formatCurrency(asset.currentPrice)}
+
+</td>
 
             <td>${formatCurrency(getInvestment(asset))}</td>
 
             <td>${formatCurrency(getCurrentValue(asset))}</td>
 
-            <td>${formatCurrency(getProfit(asset))}</td>
+          <td style="color:${
+getProfit(asset) >= 0
+? 'limegreen'
+: 'red'
+};font-weight:bold;">
+
+${
+getProfit(asset) >= 0
+? '+'
+: ''
+}
+
+${formatCurrency(getProfit(asset))}
+
+</td>
 
             <td>
 
