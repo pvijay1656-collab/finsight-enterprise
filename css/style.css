@@ -1054,17 +1054,9 @@ gap:25px;
 
 }
 
-.chart-card{
+.dashboard-card:hover{
 
-background:white;
-
-border-radius:18px;
-
-padding:25px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-height:360px;
+transform:translateY(-5px);
 
 }
 
